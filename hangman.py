@@ -20,7 +20,16 @@ def main():
 
 # helper function to start the guessing of the game
 def startGame():
-    input("Pick a letter ")
+    secretWord = "hangman"
+    print("Pick a letter ")
+
+    for letter in secretWord:
+        if input() == letter:
+            print("You guessed right")
+            return
+        else:
+            print("sorry try again")
+            
 
 # This will start the the function call of the main function. Python first looks for a module name "main" then starts the program 
 if __name__=="__main__":
