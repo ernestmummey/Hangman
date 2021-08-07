@@ -8,9 +8,9 @@ NAME = input('What is your name? ')
 # Main function for the game
 def main():
     print(f"Hello {NAME}!")
-    print("Would you like to play a quick game of Hangman? yes or no")
+    play_game = input("Would you like to play a quick game of Hangman? yes or no \n")
 
-    if  input() == "yes":
+    if  play_game == "yes":
         print("In this Hangman, you will have 7 guesses before you lose the game. Please use only letters of the Alphapet or you will lose that turn. Good Luck!")
         print(" ")
         # helper funtion to offically start the game
@@ -22,20 +22,27 @@ def main():
 def startGame():
     counter = 0
     secretWord = "hangman"
-    print("Pick a letter ")
+    guess = input("Pick a letter \n")
 
     for letter in secretWord:
-        if input() == letter:
+        if guess == letter:
             print("You guessed right")
             counter += 1
-        elif input != letter:
+        elif guess != letter:
             counter -= 1
             print("Try again")
     if counter == 7:
         print("You win")
         return
     else:
-        print("Maybe next time")
+        print(" ______\n"
+            " |\n"
+            " |\n"
+            " |\n"
+            " |\n"
+            " |\n"
+        "__________\n"
+        )
             
 
 # This will start the the function call of the main function. Python first looks for a module name "main" then starts the program 
