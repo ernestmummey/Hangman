@@ -20,29 +20,31 @@ def main():
 
 # helper function to start the guessing of the game
 def startGame():
-    counter = 0
+    turn = 7
     secretWord = "hangman"
     guess = input("Pick a letter \n")
 
-    for letter in secretWord:
-        if guess == letter:
-            print("You guessed right")
-            counter += 1
-        elif guess != letter:
-            counter -= 1
-            print("Try again")
-    if counter == 7:
-        print("You win")
-        return
-    else:
-        print(" ______\n"
-            " |\n"
-            " |\n"
-            " |\n"
-            " |\n"
-            " |\n"
-        "__________\n"
-        )
+
+    while turn > 0:
+        for char in secretWord:
+            if char in guess:
+                print(char)
+                
+            else:
+                print("__")
+                turn -=1
+        if turn == 0:
+            print("You win")
+            return
+        else:
+            print(" ______\n"
+                " |\n"
+                " |\n"
+                " |\n"
+                " |\n"
+                " |\n"
+            "__________\n"
+            )
             
 
 # This will start the the function call of the main function. Python first looks for a module name "main" then starts the program 
