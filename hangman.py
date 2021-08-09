@@ -23,29 +23,28 @@ def startGame():
     turn = 7
     secretWord = "hangman"
     guess = input("Pick a letter \n")
+    char_guess = ' '
 
 
     while turn > 0:
         for char in secretWord:
-            if char in guess:
+            wrong_guess = 0
+            if char in char_guess:
                 print(char)
                 
             else:
                 print("__")
-                turn -=1
-        if turn == 0:
+                turn +=1
+        if wrong_guess == 7:
             print("You win")
-            return
-        else:
-            print(" ______\n"
-                " |\n"
-                " |\n"
-                " |\n"
-                " |\n"
-                " |\n"
-            "__________\n"
-            )
-            
+    
+        char_guess += guess
+
+        if guess not in secretWord:
+            turn -= 1
+
+        if turn == 0:
+            print("You loose")
 
 # This will start the the function call of the main function. Python first looks for a module name "main" then starts the program 
 if __name__=="__main__":
