@@ -36,6 +36,7 @@ def startGame():
                 wrong_guess += 1
         if wrong_guess == 0:
             print("You win")
+            break
     
         guess = input("Pick a letter \n")
         guesses += guess
@@ -45,7 +46,7 @@ def startGame():
 
         if turn == 0:
             print("You loose")
-            
+
 
 # This will start the the function call of the main function. Python first looks for a module name "main" then starts the program 
 if __name__=="__main__":
