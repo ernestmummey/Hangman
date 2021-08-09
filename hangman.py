@@ -4,7 +4,6 @@ import random
 # Variables
 NAME = input('What is your name? ')
 WORDS = ["hangman", "hat", "turtle", "tequila", "picture", "vase", "python", "commandline"]
-word = random.choice(WORDS)
 # Main function for the game
 def main():
     print(f"Hello {NAME}!")
@@ -20,6 +19,7 @@ def main():
 
 # helper function to start the guessing of the game
 def startGame():
+    word = random.choice(WORDS)
     turn = 7
     guesses = ''
 
@@ -45,6 +45,7 @@ def startGame():
 
         if turn == 0:
             print("You loose")
+            
 
 # This will start the the function call of the main function. Python first looks for a module name "main" then starts the program 
 if __name__=="__main__":
