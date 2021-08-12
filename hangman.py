@@ -23,7 +23,7 @@ def startGame():
     turn = 7
     guesses = ''
 
-    print("You first guess")
+    print("The spaces represent a character in the word")
 
     while turn > 0:
         wrong_guess = 0
@@ -32,13 +32,13 @@ def startGame():
                 print(char)
                 
             else:
-                print("__")
+                print("__\n")
                 wrong_guess += 1
         if wrong_guess == 0:
             print("You win")
             break
     
-        guess = input("Pick a letter \n")
+        guess = input("Pick a letter ")
         guesses += guess
 
         if guess not in word:
